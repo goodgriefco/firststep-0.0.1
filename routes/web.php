@@ -10,9 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+// use JavaScript;
+// use App\Models\User;
+// Route::get('/', function () {
+//     JavaScript::put([
+//         'foo' => 'bar',
+//         'user' => User::first(),
+//         'age' => 29
+//     ]);
+
+//     return view('welcome');
+// });
+
+Route::get('/', 'LandingController@index');
 
 Auth::routes();
 

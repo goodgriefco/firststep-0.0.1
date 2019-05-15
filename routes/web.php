@@ -24,6 +24,10 @@
 
 Route::get('/', 'LandingController@index');
 
+Route::get('dashboard', function () {
+    return view('dashboard');
+});
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function() {

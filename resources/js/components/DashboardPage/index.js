@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import TaskGroup from "./TaskGroup";
+import AddTaskForm from "./Forms/AddTaskForm";
 
 class DashboardPage extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { tasks: []}
+        this.state = { tasks: [] };
     }
 
     async componentDidMount() {
-        const container = document.querySelector('#dashboardpage');
+        const container = document.querySelector("#dashboardpage");
         const userId = container.dataset.userId;
         const userName = container.dataset.userName;
 
@@ -47,7 +48,19 @@ class DashboardPage extends Component {
                 {fakeGroups.map((group, idx) => (
                     <div className="container" key={idx}>
                         <div className="container">
-                            <button type="button" className="btn btn-secondary" onClick={this.handleAddTask}>Add Task</button>
+                            <a
+                                className="btn btn-secondary"
+                                data-toggle="collapse"
+                                href="#collapseExample"
+                                role="button"
+                                aria-expanded="false"
+                                aria-controls="collapseExample"
+                            >
+                                Add Task
+                            </a>
+                        </div>
+                        <div className="container my-4 collapse" id="collapseExample">
+                            <AddTaskForm />
                         </div>
                         <TaskGroup
                             canCollapse={group.canCollapse}

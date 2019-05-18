@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 /*
@@ -13,6 +14,22 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/user/{id}/tasks', function ($id) {
+    $user = User::find($id);
+
+    $tasks = $user
+        ->tasks()
+        ->orderBy('is_complete')
+        ->orderByDesc('created_at')
+        ->get();
+
+    return $tasks;
 });
+
+
+// Route::middleware(['auth:api'])->group(function() {
+//     Route::get('/user', function(Request $request) {
+//         dd(auth()->user());
+//         return $request->user();
+//     });
+// });

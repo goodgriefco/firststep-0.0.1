@@ -25,7 +25,7 @@
 Route::get('/', 'LandingController@index');
 
 Route::get('dashboard', function () {
-    return view('dashboard');
+    return view('dashboard', ['userId' => Auth::user()->id, 'name' => Auth::user()->name]);
 });
 
 Auth::routes();

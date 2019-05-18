@@ -1,5 +1,6 @@
 <?php
 
+use Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -26,6 +27,25 @@ Route::get('/user/{id}/tasks', function ($id) {
     return $tasks;
 });
 
+Route::post('/user/{id}/tasks', function (Request $request, $id) {
+    // validate the given request
+    // $data = $this->validate($request, [
+    //     'title' => 'required|string|max:255',
+    // ]);
+
+    $user = User::find($id);
+
+    // create a new incomplete task with the given title
+    $task = $user->tasks()->create([
+        'title' => $request->input('title'),
+        'is_complete' => false,
+    ]);
+
+    return response()->json([
+        'message' => 'success',
+        'task' => $task->toArray()
+    ]);
+});
 
 // Route::middleware(['auth:api'])->group(function() {
 //     Route::get('/user', function(Request $request) {

@@ -63000,9 +63000,17 @@ if (document.getElementById("dashboardpage")) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -63050,18 +63058,55 @@ function (_React$Component) {
     }
   }, {
     key: "handleSubmit",
-    value: function handleSubmit(event) {
-      event.preventDefault();
-      alert("A name was submitted: " + this.state.value);
-    }
+    value: function () {
+      var _handleSubmit = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(event) {
+        var _this2 = this;
+
+        var container, userId, task;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                event.preventDefault();
+                container = document.querySelector("#dashboardpage");
+                userId = container.dataset.userId; // Load async data.
+
+                _context.next = 5;
+                return axios.post("/api/user/".concat(userId, "/tasks"), {
+                  title: "new from api wee"
+                }).then(function (res) {
+                  if (res.data.message = 'success') {
+                    _this2.props.addTaskHandler();
+                  }
+                });
+
+              case 5:
+                task = _context.sent;
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function handleSubmit(_x) {
+        return _handleSubmit.apply(this, arguments);
+      }
+
+      return handleSubmit;
+    }()
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Task Title:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Task Title:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         id: "title",
         name: "title",
         maxLength: "255",
@@ -63070,7 +63115,7 @@ function (_React$Component) {
         autoComplete: "off",
         value: this.state.value,
         onChange: this.handleChange
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "submit",
         className: "btn btn-secondary"
       }, "Add"));
@@ -63078,7 +63123,7 @@ function (_React$Component) {
   }]);
 
   return AddTaskForm;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (AddTaskForm);
 
@@ -63452,9 +63497,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -63478,6 +63523,7 @@ function (_Component) {
     _this.state = {
       tasks: []
     };
+    _this.handleAddTask = _this.handleAddTask.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -63524,15 +63570,55 @@ function (_Component) {
     }()
   }, {
     key: "handleAddTask",
-    value: function handleAddTask() {
-      console.log("handleAddTask");
+    value: function () {
+      var _handleAddTask = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var container, userId, userName, tasks;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                container = document.querySelector("#dashboardpage");
+                userId = container.dataset.userId;
+                userName = container.dataset.userName; // Load async data.
+
+                _context2.next = 5;
+                return axios.get("/api/user/".concat(userId, "/tasks"));
+
+              case 5:
+                tasks = _context2.sent;
+                // Parse the results for ease of use.
+                tasks = tasks.data;
+                this.setState({
+                  tasks: tasks,
+                  userName: userName
+                });
+
+              case 8:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function handleAddTask() {
+        return _handleAddTask.apply(this, arguments);
+      }
+
+      return handleAddTask;
+    }()
+  }, {
+    key: "submiyAddTask",
+    value: function submiyAddTask() {
+      console.log("submitAddTask");
     }
   }, {
     key: "render",
     value: function render() {
-      // console.log(this.state);
-      // const { tasks } = state;
-      // console.log("something", tasks);
+      var _this2 = this;
+
       var fakeGroups = [{
         id: "header1",
         headerText: "Fake group header",
@@ -63557,7 +63643,9 @@ function (_Component) {
         }, "Add Task")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "container my-4 collapse",
           id: "collapseExample"
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Forms_AddTaskForm__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TaskGroup__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Forms_AddTaskForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          addTaskHandler: _this2.handleAddTask
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TaskGroup__WEBPACK_IMPORTED_MODULE_2__["default"], {
           canCollapse: group.canCollapse,
           headerText: group.headerText,
           tasks: group.tasks,

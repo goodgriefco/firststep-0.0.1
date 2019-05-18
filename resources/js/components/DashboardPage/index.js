@@ -7,6 +7,7 @@ class DashboardPage extends Component {
         super(props);
 
         this.state = { tasks: [] };
+        this.handleAddTask = this.handleAddTask.bind(this);
     }
 
     async componentDidMount() {
@@ -23,14 +24,25 @@ class DashboardPage extends Component {
         this.setState({ tasks, userName });
     }
 
-    handleAddTask() {
-        console.log("handleAddTask");
+   async handleAddTask() {
+        const container = document.querySelector("#dashboardpage");
+        const userId = container.dataset.userId;
+        const userName = container.dataset.userName;
+
+        // Load async data.
+        let tasks = await axios.get(`/api/user/${userId}/tasks`);
+
+        // Parse the results for ease of use.
+        tasks = tasks.data;
+
+        this.setState({ tasks, userName });
+    }
+
+    submiyAddTask() {
+        console.log("submitAddTask");
     }
 
     render() {
-        // console.log(this.state);
-        // const { tasks } = state;
-        // console.log("something", tasks);
         const fakeGroups = [
             {
                 id: "header1",
@@ -60,7 +72,7 @@ class DashboardPage extends Component {
                             </a>
                         </div>
                         <div className="container my-4 collapse" id="collapseExample">
-                            <AddTaskForm />
+                            <AddTaskForm addTaskHandler={this.handleAddTask} />
                         </div>
                         <TaskGroup
                             canCollapse={group.canCollapse}

@@ -13,9 +13,20 @@ class AddTaskForm extends React.Component {
         this.setState({ value: event.target.value });
     }
 
-    handleSubmit(event) {
+    async handleSubmit(event) {
         event.preventDefault();
-        alert("A name was submitted: " + this.state.value);
+
+        const container = document.querySelector("#dashboardpage");
+        const userId = container.dataset.userId;
+
+        // Load async data.
+        let task = await axios
+            .post(`/api/user/${userId}/tasks`, { title: "new from api wee" })
+            .then(res => {
+                if (res.data.message = 'success') {
+                    this.props.addTaskHandler();
+                }
+            });
     }
 
     render() {
@@ -37,7 +48,9 @@ class AddTaskForm extends React.Component {
                     </label>
                 </div>
 
-                <button type="submit" className="btn btn-secondary">Add</button>
+                <button type="submit" className="btn btn-secondary">
+                    Add
+                </button>
             </form>
         );
     }

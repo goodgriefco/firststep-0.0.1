@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use Str;
+use App\Models\Task;
+use App\Models\TaskGroup;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -63,11 +65,46 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => $data['password'],
             'api_token' => Str::random(60),
         ]);
+
+
+        $taskGroups = TaskGroup::all();
+
+        foreach ($taskGroups as $group) {
+            $user->tasks()->createMany([
+                [
+                    'title' => 'Create your contact list',
+                    'group_id' => $group->id,
+                    'is_complete' => false
+                ],
+                [
+                    'title' => 'Obtain Death Certificate',
+                    'group_id' => $group->id,
+                    'is_complete' => false
+                ],
+                [
+                    'title' => 'Select cremation provider',
+                    'group_id' => $group->id,
+                    'is_complete' => false
+                ],
+                [
+                    'title' => 'Plan Memorial Details',
+                    'group_id' => $group->id,
+                    'is_complete' => false
+                ],
+                [
+                    'title' => 'Write Obituary',
+                    'group_id' => $group->id,
+                    'is_complete' => false
+                ]
+            ]);
+        }
+
+        return $user;
     }
 }

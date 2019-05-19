@@ -22,10 +22,9 @@ class TaskGroup extends Component {
     }
 
     render() {
-        const { headerText, canCollapse, groupId, group } = this.props;
+        const { headerText, canCollapse, groupId, group, addTask } = this.props;
         const { isCollapsed } = this.state;
-        console.log('TaskGroup');
-        console.log(group);
+
         return (
             <div className="container my-3">
                 <TaskGroupHeader
@@ -35,7 +34,7 @@ class TaskGroup extends Component {
                     handleCollapse={this.toggleCollapse}
                     groupId={group[0]}
                 />
-                <TaskGroupList groupId={group[0]} tasks={group[1]} />
+                <TaskGroupList groupId={group[0]} tasks={group[1]} addTask={addTask}/>
             </div>
         );
     }

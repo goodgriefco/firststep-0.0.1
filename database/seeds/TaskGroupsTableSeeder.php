@@ -12,6 +12,11 @@ class TaskGroupsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(TaskGroup::class, 5)->create();
+        $groups = ['day one', 'week one', 'month one', 'year one'];
+        foreach ($groups as $group) {
+            factory(TaskGroup::class)->create([
+                'title' => $group
+            ]);
+        }
     }
 }

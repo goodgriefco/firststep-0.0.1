@@ -2,8 +2,8 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Models\TaskGroup::class, function (Faker $faker) {
+$factory->define(App\Models\TaskGroup::class, function (Faker $faker, $title) {
     return [
-        'title' => $faker->sentence
+        'title' => $title
     ];
 });

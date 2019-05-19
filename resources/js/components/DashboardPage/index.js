@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { map } from "lodash";
 import TaskGroup from "./TaskGroup";
 import AddTaskForm from "./Forms/AddTaskForm";
 
@@ -38,6 +39,10 @@ class DashboardPage extends Component {
         this.setState({ tasks, userName });
     }
 
+    submiyAddTask() {
+        console.log("submitAddTask");
+    }
+
     render() {
         const { tasks } = this.state;
 
@@ -57,37 +62,17 @@ class DashboardPage extends Component {
         return (
             <div>
                 <div className="container text-center my-4">
-                    <h3>Your checklist</h3>
+                    <h3>Welcome, {this.state.userName}</h3>
                 </div>
                 {Object.entries(tasksByGroup).map((group, idx) => {
                     return (
                         <div className="container" key={idx}>
-                            <div className="container">
-                                <a
-                                    className="btn btn-secondary"
-                                    data-toggle="collapse"
-                                    href="#collapseExample"
-                                    role="button"
-                                    aria-expanded="false"
-                                    aria-controls="collapseExample"
-                                >
-                                    Add Task
-                                </a>
-                            </div>
-                            <div
-                                className="container my-4 collapse"
-                                id="collapseExample"
-                            >
-                                <AddTaskForm
-                                    addTaskHandler={this.handleAddTask}
-                                    groupId={group[0]}
-                                />
-                            </div>
                             <TaskGroup
                                 canCollapse={true}
                                 headerText="group header"
                                 group={group}
                                 groupId="3" // @TODO - can we just use key?
+                                addTask={this.handleAddTask}
                             />
                         </div>
                     );

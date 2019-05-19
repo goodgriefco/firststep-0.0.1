@@ -63259,10 +63259,9 @@ function (_Component) {
           headerText = _this$props.headerText,
           canCollapse = _this$props.canCollapse,
           groupId = _this$props.groupId,
-          group = _this$props.group;
+          group = _this$props.group,
+          addTask = _this$props.addTask;
       var isCollapsed = this.state.isCollapsed;
-      console.log('TaskGroup');
-      console.log(group);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container my-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskGroupHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -63273,7 +63272,8 @@ function (_Component) {
         groupId: group[0]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskGroupList__WEBPACK_IMPORTED_MODULE_2__["default"], {
         groupId: group[0],
-        tasks: group[1]
+        tasks: group[1],
+        addTask: addTask
       }));
     }
   }]);
@@ -63450,6 +63450,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _TaskGroupListRow__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TaskGroupListRow */ "./resources/js/components/DashboardPage/TaskGroupListRow.js");
+/* harmony import */ var _Forms_AddTaskForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Forms/AddTaskForm */ "./resources/js/components/DashboardPage/Forms/AddTaskForm.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -63471,6 +63472,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var TaskGroupList =
 /*#__PURE__*/
 function (_Component) {
@@ -63487,8 +63489,22 @@ function (_Component) {
     value: function render() {
       var _this$props = this.props,
           groupId = _this$props.groupId,
-          tasks = _this$props.tasks;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          tasks = _this$props.tasks,
+          addTask = _this$props.addTask;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "btn btn-link",
+        "data-toggle": "collapse",
+        href: "#collapseExample",
+        role: "button",
+        "aria-expanded": "false",
+        "aria-controls": "collapseExample"
+      }, "Add Task"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container my-4 collapse",
+        id: "collapseExample"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Forms_AddTaskForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        addTaskHandler: addTask,
+        groupId: groupId
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "list-unstyled m-0 collapse show",
         id: "group-".concat(groupId)
       }, tasks.map(function (task, idx) {
@@ -63496,7 +63512,7 @@ function (_Component) {
           key: idx,
           task: task
         });
-      }));
+      })));
     }
   }]);
 
@@ -63644,8 +63660,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _TaskGroup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TaskGroup */ "./resources/js/components/DashboardPage/TaskGroup.js");
-/* harmony import */ var _Forms_AddTaskForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Forms/AddTaskForm */ "./resources/js/components/DashboardPage/Forms/AddTaskForm.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _TaskGroup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TaskGroup */ "./resources/js/components/DashboardPage/TaskGroup.js");
+/* harmony import */ var _Forms_AddTaskForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Forms/AddTaskForm */ "./resources/js/components/DashboardPage/Forms/AddTaskForm.js");
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -63669,6 +63687,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -63775,6 +63794,11 @@ function (_Component) {
       return handleAddTask;
     }()
   }, {
+    key: "submiyAddTask",
+    value: function submiyAddTask() {
+      console.log("submitAddTask");
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -63795,31 +63819,17 @@ function (_Component) {
       var tasksByGroup = groupByGroupId(tasks);
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container text-center my-4"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Your checklist")), Object.entries(tasksByGroup).map(function (group, idx) {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Welcome, ", this.state.userName)), Object.entries(tasksByGroup).map(function (group, idx) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "container",
           key: idx
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "container"
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-          className: "btn btn-secondary",
-          "data-toggle": "collapse",
-          href: "#collapseExample",
-          role: "button",
-          "aria-expanded": "false",
-          "aria-controls": "collapseExample"
-        }, "Add Task")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "container my-4 collapse",
-          id: "collapseExample"
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Forms_AddTaskForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          addTaskHandler: _this2.handleAddTask,
-          groupId: group[0]
-        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TaskGroup__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TaskGroup__WEBPACK_IMPORTED_MODULE_3__["default"], {
           canCollapse: true,
           headerText: "group header",
           group: group,
           groupId: "3" // @TODO - can we just use key?
-
+          ,
+          addTask: _this2.handleAddTask
         }));
       }));
     }

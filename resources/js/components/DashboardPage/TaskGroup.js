@@ -30,7 +30,7 @@ class TaskGroup extends Component {
                 <TaskGroupHeader
                     canCollapse={true}
                     headerText="something"
-                    isCollapsed={false}
+                    isCollapsed={isCollapsed}
                     handleCollapse={this.toggleCollapse}
                     groupId={group[0]}
                 />

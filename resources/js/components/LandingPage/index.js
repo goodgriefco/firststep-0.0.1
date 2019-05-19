@@ -44,7 +44,7 @@ class LandingPage extends Component {
                             )}
                     </div>
                 </div>
-                {/* <div className="container p-5 border-bottom">
+                <div className="container p-5 border-bottom">
                     <h2 className="text-center font-weight-light mb-4">
                         How It Works:
                     </h2>
@@ -86,7 +86,7 @@ class LandingPage extends Component {
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
                 <div className="container p-5">
                     <h2 className="text-left font-weight-light mb-4">
                         About Us

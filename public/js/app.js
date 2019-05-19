@@ -63267,7 +63267,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskGroupHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
         canCollapse: true,
         headerText: "something",
-        isCollapsed: false,
+        isCollapsed: isCollapsed,
         handleCollapse: this.toggleCollapse,
         groupId: group[0]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskGroupList__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -63491,8 +63491,16 @@ function (_Component) {
           groupId = _this$props.groupId,
           tasks = _this$props.tasks,
           addTask = _this$props.addTask;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "btn btn-link",
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "list-unstyled m-0 collapse show",
+        id: "group-".concat(groupId)
+      }, tasks.map(function (task, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskGroupListRow__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: idx,
+          task: task
+        });
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "btn btn-secondary",
         "data-toggle": "collapse",
         href: "#collapseExample",
         role: "button",
@@ -63504,14 +63512,6 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Forms_AddTaskForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
         addTaskHandler: addTask,
         groupId: groupId
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "list-unstyled m-0 collapse show",
-        id: "group-".concat(groupId)
-      }, tasks.map(function (task, idx) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskGroupListRow__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: idx,
-          task: task
-        });
       })));
     }
   }]);
@@ -63922,6 +63922,42 @@ function (_Component) {
       }, "Already a member?", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/login"
       }, "Sign In"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container p-5 border-bottom"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "text-center font-weight-light mb-4"
+      }, "How It Works:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "steps"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row no-gutters py-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "1. First you do this thing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://via.placeholder.com/500x200",
+        className: "rounded mx-auto d-block",
+        alt: "..."
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row no-gutters py-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "2. Then this thing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://via.placeholder.com/500x200",
+        className: "rounded mx-auto d-block",
+        alt: "..."
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row no-gutters py-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "3. And then this thing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://via.placeholder.com/500x200",
+        className: "rounded mx-auto d-block",
+        alt: "..."
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container p-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "text-left font-weight-light mb-4"

@@ -8,8 +8,17 @@ class TaskGroupList extends Component {
 
         return (
             <div>
+                <ul
+                    className="list-unstyled m-0 collapse show"
+                    id={`group-${groupId}`}
+                >
+                    {tasks.map((task, idx) => (
+                        <TaskGroupListRow key={idx} task={task} />
+                    ))}
+                </ul>
+
                 <a
-                    className="btn btn-link"
+                    className="btn btn-secondary"
                     data-toggle="collapse"
                     href="#collapseExample"
                     role="button"
@@ -24,14 +33,6 @@ class TaskGroupList extends Component {
                         groupId={groupId}
                     />
                 </div>
-                <ul
-                    className="list-unstyled m-0 collapse show"
-                    id={`group-${groupId}`}
-                >
-                    {tasks.map((task, idx) => (
-                        <TaskGroupListRow key={idx} task={task} />
-                    ))}
-                </ul>
             </div>
         );
     }

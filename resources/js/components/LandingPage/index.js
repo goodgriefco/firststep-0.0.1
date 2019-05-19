@@ -25,12 +25,12 @@ class LandingPage extends Component {
                         {/* @TODO - make into it's own component with authentication logic handling */}
                         {authenticated ? (
                                 <div>
-                                    <a className="btn btn-secondary btn-lg" href="/dashboard" role="button">Go to Your Dashboard</a>
+                                    <a className="btn btn-secondary btn-lg bg-success" href="/dashboard" role="button">Go to Your Dashboard</a>
                                 </div>
                             ) : (
                                 <div>
                                     <a
-                                        className="btn btn-secondary btn-lg"
+                                        className="btn btn-secondary bg-success btn-lg"
                                         href="/register"
                                         role="button"
                                     >

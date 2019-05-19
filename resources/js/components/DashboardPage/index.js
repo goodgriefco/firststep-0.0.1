@@ -65,17 +65,22 @@ class DashboardPage extends Component {
                     <h3>Welcome, {this.state.userName}</h3>
                 </div>
                 {Object.entries(tasksByGroup).map((group, idx) => {
-                    return (
-                        <div className="container" key={idx}>
-                            <TaskGroup
-                                canCollapse={true}
-                                headerText="group header"
-                                group={group}
-                                groupId="3" // @TODO - can we just use key?
-                                addTask={this.handleAddTask}
-                            />
-                        </div>
-                    );
+                    // console.log(group);
+                    if (group[0] === "2") {
+                        return (
+                            <div className="container" key={idx}>
+                                <TaskGroup
+                                    canCollapse={true}
+                                    headerText="group header"
+                                    group={group}
+                                    groupId="3" // @TODO - can we just use key?
+                                    addTask={this.handleAddTask}
+                                />
+                            </div>
+                        );
+                    } else {
+                        return '';
+                    }
                 })}
             </div>
         );

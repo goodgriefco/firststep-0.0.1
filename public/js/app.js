@@ -63820,17 +63820,22 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container text-center my-4"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Welcome, ", this.state.userName)), Object.entries(tasksByGroup).map(function (group, idx) {
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "container",
-          key: idx
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TaskGroup__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          canCollapse: true,
-          headerText: "group header",
-          group: group,
-          groupId: "3" // @TODO - can we just use key?
-          ,
-          addTask: _this2.handleAddTask
-        }));
+        // console.log(group);
+        if (group[0] === "2") {
+          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+            className: "container",
+            key: idx
+          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TaskGroup__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            canCollapse: true,
+            headerText: "group header",
+            group: group,
+            groupId: "3" // @TODO - can we just use key?
+            ,
+            addTask: _this2.handleAddTask
+          }));
+        } else {
+          return '';
+        }
       }));
     }
   }]);
@@ -63905,11 +63910,11 @@ function (_Component) {
       }, "A checklist to get you through your first week."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-center"
       }, authenticated ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "btn btn-secondary btn-lg",
+        className: "btn btn-secondary btn-lg bg-success",
         href: "/dashboard",
         role: "button"
       }, "Go to Your Dashboard")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "btn btn-secondary btn-lg",
+        className: "btn btn-secondary bg-success btn-lg",
         href: "/register",
         role: "button"
       }, "Create Checklist"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {

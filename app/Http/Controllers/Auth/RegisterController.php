@@ -72,7 +72,6 @@ class RegisterController extends Controller
             'api_token' => Str::random(60),
         ]);
 
-
         $taskGroups = TaskGroup::all();
 
         foreach ($taskGroups as $group) {

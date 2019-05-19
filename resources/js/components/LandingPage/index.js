@@ -12,15 +12,6 @@ class LandingPage extends Component {
     render() {
         const { authenticated } = this.state;
 
-        const handleClick = event => {
-            event.preventDefault();
-        };
-
-        // if (this.state.shouldRedirectToIntake) {
-        //     return <Redirect to="/dashboard" />;
-        //     // return <Redirect to="/intake" />;
-        // }
-
         return (
             <div className="container-fluid">
                 <div className="container p-5 border-bottom">
@@ -35,19 +26,13 @@ class LandingPage extends Component {
                         {/* @TODO - make into it's own component with authentication logic handling */}
                         {authenticated ? (
                                 <div>
-                                    <button
-                                        type="button"
-                                        className="btn btn-secondary btn-lg"
-                                        onClick={handleClick}
-                                    >
-                                        Go to Your Dashboard
-                                    </button>
+                                    <a className="btn btn-secondary btn-lg" href="/dashboard" role="button">Go to Your Dashboard</a>
                                 </div>
                             ) : (
                                 <div>
                                     <a
                                         className="btn btn-secondary btn-lg"
-                                        href="/login"
+                                        href="/register"
                                         role="button"
                                     >
                                         I need help planning

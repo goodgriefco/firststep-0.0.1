@@ -25,16 +25,22 @@
 Route::get('/', 'LandingController@index');
 
 Route::get('dashboard', function () {
-    return view('dashboard', ['userId' => Auth::user()->id, 'name' => Auth::user()->name]);
-});
+    return view('dashboard', [
+        'userId' => Auth::user() ? Auth::user()->id : null,
+        'name' => Auth::user() ? Auth::user()->name : null,
+    ]);
+})->middleware('auth');
 
 Auth::routes();
 
-Route::middleware(['auth'])->group(function() {
+Route::middleware(['auth'])->group(function () {
     Route::resource('tasks', 'TaskController', [
         'only' => [
             'index', 'store', 'update'
         ]
     ]);
-
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

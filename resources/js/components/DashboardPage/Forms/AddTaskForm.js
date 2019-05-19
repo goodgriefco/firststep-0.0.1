@@ -18,10 +18,13 @@ class AddTaskForm extends React.Component {
 
         const container = document.querySelector("#dashboardpage");
         const userId = container.dataset.userId;
+        // const addTaskForm = document.querySelector(".add-task-form");
+        const addTaskForm = document.getElementById('add-task-form');
+        const taskTitle = addTaskForm.elements["title"].value;
 
         // Load async data.
         let task = await axios
-            .post(`/api/user/${userId}/tasks`, { title: "new from api wee" })
+            .post(`/api/user/${userId}/tasks`, { title: taskTitle })
             .then(res => {
                 if (res.data.message = 'success') {
                     this.props.addTaskHandler();
@@ -31,7 +34,7 @@ class AddTaskForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form id="add-task-form" onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <label>
                         Task Title:

@@ -6,7 +6,7 @@ class TaskGroupList extends Component {
         const { groupId, tasks } = this.props;
 
         return (
-            <ul className="list-unstyled m-0 collapse" id={groupId}>
+            <ul className="list-unstyled m-0 collapse show" id={groupId}>
                 {tasks.map((task, idx) => (
                     <TaskGroupListRow key={idx} task={task} />
                 ))}

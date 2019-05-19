@@ -63064,28 +63064,31 @@ function (_React$Component) {
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(event) {
         var _this2 = this;
 
-        var container, userId, task;
+        var container, userId, addTaskForm, taskTitle, task;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 event.preventDefault();
                 container = document.querySelector("#dashboardpage");
-                userId = container.dataset.userId; // Load async data.
+                userId = container.dataset.userId; // const addTaskForm = document.querySelector(".add-task-form");
 
-                _context.next = 5;
+                addTaskForm = document.getElementById('add-task-form');
+                taskTitle = addTaskForm.elements["title"].value; // Load async data.
+
+                _context.next = 7;
                 return axios.post("/api/user/".concat(userId, "/tasks"), {
-                  title: "new from api wee"
+                  title: taskTitle
                 }).then(function (res) {
                   if (res.data.message = 'success') {
                     _this2.props.addTaskHandler();
                   }
                 });
 
-              case 5:
+              case 7:
                 task = _context.sent;
 
-              case 6:
+              case 8:
               case "end":
                 return _context.stop();
             }
@@ -63103,6 +63106,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+        id: "add-task-form",
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group"
@@ -63380,7 +63384,7 @@ function (_Component) {
           groupId = _this$props.groupId,
           tasks = _this$props.tasks;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "list-unstyled m-0 collapse",
+        className: "list-unstyled m-0 collapse show",
         id: groupId
       }, tasks.map(function (task, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskGroupListRow__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -63715,15 +63719,6 @@ function (_Component) {
     key: "render",
     value: function render() {
       var authenticated = this.state.authenticated;
-
-      var handleClick = function handleClick(event) {
-        event.preventDefault();
-      }; // if (this.state.shouldRedirectToIntake) {
-      //     return <Redirect to="/dashboard" />;
-      //     // return <Redirect to="/intake" />;
-      // }
-
-
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container-fluid"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -63732,13 +63727,13 @@ function (_Component) {
         className: "text-center font-weight-light mb-4"
       }, "Take one pint of water, add a half pound of sugar, the juice of eight lemons, the zest of half a lemon.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Pour the water from one jug then into the other several times. Strain through a clean napkin."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-center"
-      }, authenticated ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button",
+      }, authenticated ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "btn btn-secondary btn-lg",
-        onClick: handleClick
+        href: "/dashboard",
+        role: "button"
       }, "Go to Your Dashboard")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "btn btn-secondary btn-lg",
-        href: "/login",
+        href: "/register",
         role: "button"
       }, "I need help planning"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
         className: "form-text text-muted m-3"

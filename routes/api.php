@@ -1,6 +1,5 @@
 <?php
 
-use Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -32,7 +31,6 @@ Route::post('/user/{id}/tasks', function (Request $request, $id) {
     // $data = $this->validate($request, [
     //     'title' => 'required|string|max:255',
     // ]);
-
     $user = User::find($id);
 
     // create a new incomplete task with the given title

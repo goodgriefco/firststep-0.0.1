@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 /*
@@ -38,6 +39,17 @@ Route::post('/user/{id}/tasks', function (Request $request, $id) {
         'title' => $request->input('title'),
         'is_complete' => false,
     ]);
+
+    return response()->json([
+        'message' => 'success',
+        'task' => $task->toArray()
+    ]);
+});
+
+Route::post('/task/{id}/complete', function (Request $request, $id) {
+    $task = Task::findOrFail($id);
+
+    $task->toggleComplete()->save();
 
     return response()->json([
         'message' => 'success',

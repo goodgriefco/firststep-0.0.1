@@ -34,4 +34,14 @@ class Task extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Mark complete
+     */
+    public function toggleComplete()
+    {
+        $this->is_complete = !$this->is_complete;
+
+        return $this;
+    }
 }

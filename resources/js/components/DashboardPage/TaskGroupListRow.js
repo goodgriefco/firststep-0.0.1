@@ -16,7 +16,7 @@ class TaskGroupListRow extends Component {
 
         await axios
             .post(`/api/task/${task.id}/complete`)
-            .then(res => console.log(res));
+            .then(res => console.log('wee',res));
 
         this.setState(prevState => ({
             checked: !prevState.checked

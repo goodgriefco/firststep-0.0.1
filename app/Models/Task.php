@@ -21,6 +21,7 @@ class Task extends Model
      * @var array
      */
     protected $fillable = [
+        'group_id',
         'title',
         'is_complete',
     ];

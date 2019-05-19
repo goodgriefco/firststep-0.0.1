@@ -16,15 +16,14 @@ class AddTaskForm extends React.Component {
     async handleSubmit(event) {
         event.preventDefault();
 
+        const { groupId } = this.props;
         const container = document.querySelector("#dashboardpage");
         const userId = container.dataset.userId;
-        // const addTaskForm = document.querySelector(".add-task-form");
-        const addTaskForm = document.getElementById('add-task-form');
-        const taskTitle = addTaskForm.elements["title"].value;
+        const addTaskForm = document.getElementById(`add-task-form-${groupId}`);
+        const taskTitle = addTaskForm.elements[`title-${groupId}`].value;
 
-        // Load async data.
         let task = await axios
-            .post(`/api/user/${userId}/tasks`, { title: taskTitle })
+            .post(`/api/user/${userId}/tasks`, { title: taskTitle, groupId: groupId })
             .then(res => {
                 if (res.data.message = 'success') {
                     this.props.addTaskHandler();
@@ -33,14 +32,16 @@ class AddTaskForm extends React.Component {
     }
 
     render() {
+        const { groupId } = this.props;
+
         return (
-            <form id="add-task-form" onSubmit={this.handleSubmit}>
+            <form id={`add-task-form-${groupId}`} onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <label>
                         Task Title:
                         <input
-                            id="title"
-                            name="title"
+                            id={`title-${groupId}`}
+                            name={`title-${groupId}`}
                             maxLength="255"
                             type="text"
                             className="form-control"

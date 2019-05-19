@@ -6211,6 +6211,25 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./resources/js/components/Common/Common.scss":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/lib/loader.js??ref--7-3!./resources/js/components/Common/Common.scss ***!
+  \*****************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".navbar-light .navbar-brand {\n  color: #0aa96c;\n}\n\n.page-footer {\n  background-color: #0aa96c;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./resources/js/components/DashboardPage/TaskGroup.scss":
 /*!***************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/lib/loader.js??ref--7-3!./resources/js/components/DashboardPage/TaskGroup.scss ***!
@@ -62976,6 +62995,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _LandingPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../LandingPage */ "./resources/js/components/LandingPage/index.js");
 /* harmony import */ var _DashboardPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../DashboardPage */ "./resources/js/components/DashboardPage/index.js");
+/* harmony import */ var _Common_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Common.scss */ "./resources/js/components/Common/Common.scss");
+/* harmony import */ var _Common_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Common_scss__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -62988,6 +63010,36 @@ if (document.getElementById("landingpage")) {
 if (document.getElementById("dashboardpage")) {
   Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DashboardPage__WEBPACK_IMPORTED_MODULE_3__["default"], null), document.getElementById("dashboardpage"));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/Common/Common.scss":
+/*!****************************************************!*\
+  !*** ./resources/js/components/Common/Common.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/lib/loader.js??ref--7-3!./Common.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./resources/js/components/Common/Common.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -63064,36 +63116,36 @@ function (_React$Component) {
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(event) {
         var _this2 = this;
 
-        var container, userId, addTaskForm, taskTitle, task;
+        var groupId, container, userId, addTaskForm, taskTitle, task;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 event.preventDefault();
+                groupId = this.props.groupId;
                 container = document.querySelector("#dashboardpage");
-                userId = container.dataset.userId; // const addTaskForm = document.querySelector(".add-task-form");
-
-                addTaskForm = document.getElementById('add-task-form');
-                taskTitle = addTaskForm.elements["title"].value; // Load async data.
-
-                _context.next = 7;
+                userId = container.dataset.userId;
+                addTaskForm = document.getElementById("add-task-form-".concat(groupId));
+                taskTitle = addTaskForm.elements["title-".concat(groupId)].value;
+                _context.next = 8;
                 return axios.post("/api/user/".concat(userId, "/tasks"), {
-                  title: taskTitle
+                  title: taskTitle,
+                  groupId: groupId
                 }).then(function (res) {
                   if (res.data.message = 'success') {
                     _this2.props.addTaskHandler();
                   }
                 });
 
-              case 7:
+              case 8:
                 task = _context.sent;
 
-              case 8:
+              case 9:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, this);
       }));
 
       function handleSubmit(_x) {
@@ -63105,14 +63157,15 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var groupId = this.props.groupId;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-        id: "add-task-form",
+        id: "add-task-form-".concat(groupId),
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Task Title:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        id: "title",
-        name: "title",
+        id: "title-".concat(groupId),
+        name: "title-".concat(groupId),
         maxLength: "255",
         type: "text",
         className: "form-control",
@@ -63206,19 +63259,21 @@ function (_Component) {
           headerText = _this$props.headerText,
           canCollapse = _this$props.canCollapse,
           groupId = _this$props.groupId,
-          tasks = _this$props.tasks;
+          group = _this$props.group;
       var isCollapsed = this.state.isCollapsed;
+      console.log('TaskGroup');
+      console.log(group);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container my-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskGroupHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        canCollapse: canCollapse,
-        headerText: headerText,
-        isCollapsed: isCollapsed,
+        canCollapse: true,
+        headerText: "something",
+        isCollapsed: false,
         handleCollapse: this.toggleCollapse,
-        groupId: groupId
+        groupId: group[0]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskGroupList__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        groupId: groupId,
-        tasks: tasks
+        groupId: group[0],
+        tasks: group[1]
       }));
     }
   }]);
@@ -63269,9 +63324,17 @@ if(false) {}
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -63296,13 +63359,55 @@ var TaskGroupHeader =
 function (_Component) {
   _inherits(TaskGroupHeader, _Component);
 
-  function TaskGroupHeader() {
+  function TaskGroupHeader(props) {
+    var _this;
+
     _classCallCheck(this, TaskGroupHeader);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(TaskGroupHeader).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TaskGroupHeader).call(this, props));
+    _this.state = {
+      headerText: ''
+    };
+    return _this;
   }
 
   _createClass(TaskGroupHeader, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var groupId, taskgroup;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                groupId = this.props.groupId; // Load async data.
+
+                _context.next = 3;
+                return axios.get("/api/taskgroup/".concat(groupId));
+
+              case 3:
+                taskgroup = _context.sent;
+                this.setState({
+                  headerText: taskgroup.data.task_group.title
+                });
+
+              case 5:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -63312,22 +63417,22 @@ function (_Component) {
           handleCollapse = _this$props.handleCollapse,
           groupId = _this$props.groupId;
       var iconConstant = isCollapsed ? "expand_more" : "expand_less";
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "border-bottom"
-      }, canCollapse ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, canCollapse ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         "data-toggle": "collapse",
-        href: "#".concat(groupId),
+        href: "#group-".concat(groupId),
         className: "text-dark d-flex justify-content-between text-decoration-none" // @TODO - aria controls?
         ,
         onClick: handleCollapse
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, headerText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, this.state.headerText), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "material-icons"
-      }, iconConstant)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, headerText));
+      }, iconConstant)) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, headerText));
     }
   }]);
 
   return TaskGroupHeader;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (TaskGroupHeader);
 
@@ -63385,7 +63490,7 @@ function (_Component) {
           tasks = _this$props.tasks;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "list-unstyled m-0 collapse show",
-        id: groupId
+        id: "group-".concat(groupId)
       }, tasks.map(function (task, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskGroupListRow__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: idx,
@@ -63473,7 +63578,7 @@ function (_Component) {
                 task = this.props.task;
                 _context.next = 3;
                 return axios.post("/api/task/".concat(task.id, "/complete")).then(function (res) {
-                  return console.log(res);
+                  return console.log('wee', res);
                 });
 
               case 3:
@@ -63670,24 +63775,27 @@ function (_Component) {
       return handleAddTask;
     }()
   }, {
-    key: "submiyAddTask",
-    value: function submiyAddTask() {
-      console.log("submitAddTask");
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      var fakeGroups = [{
-        id: "header1",
-        headerText: "Fake group header",
-        canCollapse: true,
-        tasks: this.state.tasks
-      }];
+      var tasks = this.state.tasks; // Helper
+
+      var groupBy = function groupBy(key) {
+        return function (array) {
+          return array.reduce(function (objectsByKeyValue, obj) {
+            var value = obj[key];
+            objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(obj);
+            return objectsByKeyValue;
+          }, {});
+        };
+      };
+
+      var groupByGroupId = groupBy('group_id');
+      var tasksByGroup = groupByGroupId(tasks);
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container text-center my-4"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Welcome, ", this.state.userName)), fakeGroups.map(function (group, idx) {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Your checklist")), Object.entries(tasksByGroup).map(function (group, idx) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "container",
           key: idx
@@ -63704,12 +63812,13 @@ function (_Component) {
           className: "container my-4 collapse",
           id: "collapseExample"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Forms_AddTaskForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          addTaskHandler: _this2.handleAddTask
+          addTaskHandler: _this2.handleAddTask,
+          groupId: group[0]
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TaskGroup__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          canCollapse: group.canCollapse,
-          headerText: group.headerText,
-          tasks: group.tasks,
-          groupId: group.id // @TODO - can we just use key?
+          canCollapse: true,
+          headerText: "group header",
+          group: group,
+          groupId: "3" // @TODO - can we just use key?
 
         }));
       }));
@@ -63780,8 +63889,10 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container p-5 border-bottom"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "text-center font-weight-light mb-4 lead"
+      }, "The first thing to do when a loved one dies."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "text-center font-weight-light mb-4"
-      }, "Take one pint of water, add a half pound of sugar, the juice of eight lemons, the zest of half a lemon.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Pour the water from one jug then into the other several times. Strain through a clean napkin."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "A checklist to get you through your first week."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-center"
       }, authenticated ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "btn btn-secondary btn-lg",
@@ -63791,47 +63902,11 @@ function (_Component) {
         className: "btn btn-secondary btn-lg",
         href: "/register",
         role: "button"
-      }, "I need help planning"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+      }, "Create Checklist"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
         className: "form-text text-muted m-3"
       }, "Already a member?", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/login"
       }, "Sign In"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container p-5 border-bottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "text-center font-weight-light mb-4"
-      }, "How It Works:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "steps"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row no-gutters py-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "1. First you do this thing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://via.placeholder.com/500x200",
-        className: "rounded mx-auto d-block",
-        alt: "..."
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row no-gutters py-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "2. Then this thing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://via.placeholder.com/500x200",
-        className: "rounded mx-auto d-block",
-        alt: "..."
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row no-gutters py-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "3. And then this thing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://via.placeholder.com/500x200",
-        className: "rounded mx-auto d-block",
-        alt: "..."
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container p-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "text-left font-weight-light mb-4"

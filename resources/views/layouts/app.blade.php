@@ -38,6 +38,6 @@
         </main>
     </div>
 
-    {{-- @include ('footer') --}}
+    @include ('layouts.footer')
 </body>
 </html>

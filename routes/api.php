@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\Task;
+use App\Models\TaskGroup;
 use Illuminate\Http\Request;
 
 /*
@@ -20,11 +21,10 @@ Route::get('/user/{id}/tasks', function ($id) {
 
     $tasks = $user
         ->tasks()
-        ->orderBy('is_complete')
         ->orderByDesc('created_at')
         ->get();
 
-    return $tasks;
+    return $tasks->toJson();
 });
 
 Route::post('/user/{id}/tasks', function (Request $request, $id) {
@@ -37,6 +37,7 @@ Route::post('/user/{id}/tasks', function (Request $request, $id) {
     // create a new incomplete task with the given title
     $task = $user->tasks()->create([
         'title' => $request->input('title'),
+        'group_id' => $request->input('groupId'),
         'is_complete' => false,
     ]);
 
@@ -57,6 +58,14 @@ Route::post('/task/{id}/complete', function (Request $request, $id) {
     ]);
 });
 
+Route::get('/taskgroup/{id}', function ($id) {
+    $taskGroup = TaskGroup::findOrFail($id);
+
+    return response()->json([
+        'message' => 'success',
+        'task_group' => $taskGroup->toArray()
+    ]);
+});
 // Route::middleware(['auth:api'])->group(function() {
 //     Route::get('/user', function(Request $request) {
 //         dd(auth()->user());

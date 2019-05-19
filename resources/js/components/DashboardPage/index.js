@@ -24,7 +24,7 @@ class DashboardPage extends Component {
         this.setState({ tasks, userName });
     }
 
-   async handleAddTask() {
+    async handleAddTask() {
         const container = document.querySelector("#dashboardpage");
         const userId = container.dataset.userId;
         const userName = container.dataset.userName;
@@ -38,50 +38,60 @@ class DashboardPage extends Component {
         this.setState({ tasks, userName });
     }
 
-    submiyAddTask() {
-        console.log("submitAddTask");
-    }
-
     render() {
-        const fakeGroups = [
-            {
-                id: "header1",
-                headerText: "Fake group header",
-                canCollapse: true,
-                tasks: this.state.tasks
-            }
-        ];
+        const { tasks } = this.state;
+
+        // Helper
+        const groupBy = key => array =>
+            array.reduce((objectsByKeyValue, obj) => {
+                const value = obj[key];
+                objectsByKeyValue[value] = (
+                    objectsByKeyValue[value] || []
+                ).concat(obj);
+                return objectsByKeyValue;
+            }, {});
+
+        const groupByGroupId = groupBy('group_id');
+        const tasksByGroup = groupByGroupId(tasks);
 
         return (
             <div>
                 <div className="container text-center my-4">
-                    <h3>Welcome, {this.state.userName}</h3>
+                    <h3>Your checklist</h3>
                 </div>
-                {fakeGroups.map((group, idx) => (
-                    <div className="container" key={idx}>
-                        <div className="container">
-                            <a
-                                className="btn btn-secondary"
-                                data-toggle="collapse"
-                                href="#collapseExample"
-                                role="button"
-                                aria-expanded="false"
-                                aria-controls="collapseExample"
+                {Object.entries(tasksByGroup).map((group, idx) => {
+                    return (
+                        <div className="container" key={idx}>
+                            <div className="container">
+                                <a
+                                    className="btn btn-secondary"
+                                    data-toggle="collapse"
+                                    href="#collapseExample"
+                                    role="button"
+                                    aria-expanded="false"
+                                    aria-controls="collapseExample"
+                                >
+                                    Add Task
+                                </a>
+                            </div>
+                            <div
+                                className="container my-4 collapse"
+                                id="collapseExample"
                             >
-                                Add Task
-                            </a>
+                                <AddTaskForm
+                                    addTaskHandler={this.handleAddTask}
+                                    groupId={group[0]}
+                                />
+                            </div>
+                            <TaskGroup
+                                canCollapse={true}
+                                headerText="group header"
+                                group={group}
+                                groupId="3" // @TODO - can we just use key?
+                            />
                         </div>
-                        <div className="container my-4 collapse" id="collapseExample">
-                            <AddTaskForm addTaskHandler={this.handleAddTask} />
-                        </div>
-                        <TaskGroup
-                            canCollapse={group.canCollapse}
-                            headerText={group.headerText}
-                            tasks={group.tasks}
-                            groupId={group.id} // @TODO - can we just use key?
-                        />
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         );
     }

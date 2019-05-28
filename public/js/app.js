@@ -63907,7 +63907,7 @@ function (_Component) {
         className: "text-center font-weight-light mb-4 lead"
       }, "Dealing with a Death is Hard"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "text-center font-weight-light mb-4"
-      }, "A checklist to get you through your first week."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "We\u2019re Here to Make the Planning a Little Easier"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-center"
       }, authenticated ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "btn btn-secondary btn-lg bg-success",
@@ -63917,7 +63917,7 @@ function (_Component) {
         className: "btn btn-secondary bg-success btn-lg",
         href: "/register",
         role: "button"
-      }, "Create Checklist"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+      }, "I need help planning now"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
         className: "form-text text-muted m-3"
       }, "Already a member?", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/login"
@@ -63931,7 +63931,7 @@ function (_Component) {
         className: "row no-gutters py-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "1. First you do this thing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "1. Answer a few Short Questions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We\u2019ll use this info to tailor your experience to your needs.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "https://via.placeholder.com/500x200",
@@ -63941,7 +63941,7 @@ function (_Component) {
         className: "row no-gutters py-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "2. Then this thing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "2. Meet Your Dashboard"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Based on your responses, we\u2019ll instantly create a comprehensive checklist that\u2019ll serve as your roadmap forward.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "https://via.placeholder.com/500x200",
@@ -63951,7 +63951,7 @@ function (_Component) {
         className: "row no-gutters py-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "3. And then this thing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "3. Start Checking Things Off"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Take your tasks day by day. We\u2019ll keep you on track, share useful resources, and assist in decision making.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "https://via.placeholder.com/500x200",
@@ -63963,7 +63963,7 @@ function (_Component) {
         className: "text-left font-weight-light mb-4"
       }, "About Us"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "text-left font-weight-light mb-4"
-      }, "The nail technician pushed my cuticles back ... turns my hand over, stretches the skin on my palm and says, \"I see your daughters and their daughters.\" That night in a dream, the first girl emerges from a slit in my stomach. The scar heals into a smile. The man I love pulls the stitches out with his fingernails. We leave black sutures curling on the side of the bath.")));
+      }, "We\u2019ve been there. Our team started in your shoes having lost parents and grandparents, and having been totally overwhelmed by all of the work that came with it. We quickly realized it\u2019s really hard to navigate not only the first few days but also the weeks and months following a loss. So, we made it our mission to ensure every grieving person has a simple, trustworthy, and comprehensive place to turn. We\u2019ve sifted through the hundreds of websites, funeral services, and books so you don\u2019t have to and we\u2019ve got some of the most knowledgeable people in the game advising us. Think of us as part knowledgeable friend who\u2019s been there before and part assistant to help you wade through the tough stuff.")));
     }
   }]);
 

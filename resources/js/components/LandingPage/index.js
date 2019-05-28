@@ -6,7 +6,7 @@ class LandingPage extends Component {
 
         this.state = {
             authenticated: window.getFromBackend.userName || null
-        }
+        };
     }
 
     render() {
@@ -19,29 +19,35 @@ class LandingPage extends Component {
                         Dealing with a Death is Hard
                     </p>
                     <p className="text-center font-weight-light mb-4">
-                        A checklist to get you through your first week.
+                        We’re Here to Make the Planning a Little Easier
                     </p>
                     <div className="text-center">
                         {/* @TODO - make into it's own component with authentication logic handling */}
                         {authenticated ? (
-                                <div>
-                                    <a className="btn btn-secondary btn-lg bg-success" href="/dashboard" role="button">Go to Your Dashboard</a>
-                                </div>
-                            ) : (
-                                <div>
-                                    <a
-                                        className="btn btn-secondary bg-success btn-lg"
-                                        href="/register"
-                                        role="button"
-                                    >
-                                        Create Checklist
-                                    </a>
-                                    <small className="form-text text-muted m-3">
-                                        Already a member?{" "}
-                                        <a href="/login">Sign In</a>
-                                    </small>
-                                </div>
-                            )}
+                            <div>
+                                <a
+                                    className="btn btn-secondary btn-lg bg-success"
+                                    href="/dashboard"
+                                    role="button"
+                                >
+                                    Go to Your Dashboard
+                                </a>
+                            </div>
+                        ) : (
+                            <div>
+                                <a
+                                    className="btn btn-secondary bg-success btn-lg"
+                                    href="/register"
+                                    role="button"
+                                >
+                                    I need help planning now
+                                </a>
+                                <small className="form-text text-muted m-3">
+                                    Already a member?{" "}
+                                    <a href="/login">Sign In</a>
+                                </small>
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="container p-5 border-bottom">
@@ -51,7 +57,11 @@ class LandingPage extends Component {
                     <div className="steps">
                         <div className="row no-gutters py-4">
                             <div className="col">
-                                <h2>1. First you do this thing</h2>
+                                <h2>1. Answer a few Short Questions</h2>
+                                <p>
+                                    We’ll use this info to tailor your
+                                    experience to your needs.
+                                </p>
                             </div>
                             <div className="col">
                                 <img
@@ -63,7 +73,12 @@ class LandingPage extends Component {
                         </div>
                         <div className="row no-gutters py-4">
                             <div className="col">
-                                <h2>2. Then this thing</h2>
+                                <h2>2. Meet Your Dashboard</h2>
+                                <p>
+                                    Based on your responses, we’ll instantly
+                                    create a comprehensive checklist that’ll
+                                    serve as your roadmap forward.
+                                </p>
                             </div>
                             <div className="col">
                                 <img
@@ -75,7 +90,12 @@ class LandingPage extends Component {
                         </div>
                         <div className="row no-gutters py-4">
                             <div className="col">
-                                <h2>3. And then this thing</h2>
+                                <h2>3. Start Checking Things Off</h2>
+                                <p>
+                                    Take your tasks day by day. We’ll keep you
+                                    on track, share useful resources, and assist
+                                    in decision making.
+                                </p>
                             </div>
                             <div className="col">
                                 <img
@@ -92,13 +112,20 @@ class LandingPage extends Component {
                         About Us
                     </h2>
                     <p className="text-left font-weight-light mb-4">
-                        The nail technician pushed my cuticles back ... turns my
-                        hand over, stretches the skin on my palm and says, "I
-                        see your daughters and their daughters." That night in a
-                        dream, the first girl emerges from a slit in my stomach.
-                        The scar heals into a smile. The man I love pulls the
-                        stitches out with his fingernails. We leave black
-                        sutures curling on the side of the bath.
+                        We’ve been there. Our team started in your shoes having
+                        lost parents and grandparents, and having been totally
+                        overwhelmed by all of the work that came with it. We
+                        quickly realized it’s really hard to navigate not only
+                        the first few days but also the weeks and months
+                        following a loss. So, we made it our mission to ensure
+                        every grieving person has a simple, trustworthy, and
+                        comprehensive place to turn. We’ve sifted through the
+                        hundreds of websites, funeral services, and books so you
+                        don’t have to and we’ve got some of the most
+                        knowledgeable people in the game advising us. Think of
+                        us as part knowledgeable friend who’s been there before
+                        and part assistant to help you wade through the tough
+                        stuff.
                     </p>
                 </div>
             </div>

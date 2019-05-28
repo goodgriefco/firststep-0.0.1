@@ -3,18 +3,17 @@
 use Illuminate\Support\Str;
 
 // @TODO - Fix this.
-if (env('APP_ENV') !== 'local') {
+if (env('APP_ENV') === 'staging') {
     $url = parse_url(env("CLEARDB_DATABASE_URL"));
     $host = $url["host"];
     $username = $url["user"];
     $password = $url["pass"];
     $database = substr($url["path"], 1);
 } else {
-    $url = null;
-    $host = null;
-    $username = null;
-    $password = null;
-    $database = null;
+    $host = env('DB_HOST','localhost');
+    $username = env('DB_USERNAME', 'root');
+    $password = env('DB_PASSWORD', 'secret');
+    $database = env('DB_DATABASE', 'prototype');
 }
 
 return [

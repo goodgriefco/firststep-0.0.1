@@ -16,7 +16,7 @@ class LandingPage extends Component {
             <div className="container-fluid">
                 <div className="container p-5 border-bottom">
                     <p className="text-center font-weight-light mb-4 lead">
-                        The first thing to do when a loved one dies.
+                        Dealing with a Death is Hard
                     </p>
                     <p className="text-center font-weight-light mb-4">
                         A checklist to get you through your first week.

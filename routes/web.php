@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// @TODO - Why is this here? Can we remove this package and then this code?
 // use JavaScript;
 // use App\Models\User;
 // Route::get('/', function () {
@@ -44,3 +45,4 @@ Route::middleware(['auth'])->group(function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/faq', 'FAQController@index')->name('faq');

@@ -62995,8 +62995,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _LandingPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../LandingPage */ "./resources/js/components/LandingPage/index.js");
 /* harmony import */ var _DashboardPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../DashboardPage */ "./resources/js/components/DashboardPage/index.js");
-/* harmony import */ var _Common_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Common.scss */ "./resources/js/components/Common/Common.scss");
-/* harmony import */ var _Common_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Common_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _FAQPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../FAQPage */ "./resources/js/components/FAQPage/index.js");
+/* harmony import */ var _Common_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Common.scss */ "./resources/js/components/Common/Common.scss");
+/* harmony import */ var _Common_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Common_scss__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -63009,6 +63011,10 @@ if (document.getElementById("landingpage")) {
 
 if (document.getElementById("dashboardpage")) {
   Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DashboardPage__WEBPACK_IMPORTED_MODULE_3__["default"], null), document.getElementById("dashboardpage"));
+}
+
+if (document.getElementById("faqpage")) {
+  Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FAQPage__WEBPACK_IMPORTED_MODULE_4__["default"], null), document.getElementById("faqpage"));
 }
 
 /***/ }),
@@ -63844,6 +63850,166 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (DashboardPage);
+
+/***/ }),
+
+/***/ "./resources/js/components/FAQPage/index.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/FAQPage/index.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var FAQPage =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(FAQPage, _Component);
+
+  function FAQPage(props) {
+    _classCallCheck(this, FAQPage);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(FAQPage).call(this, props));
+  }
+
+  _createClass(FAQPage, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Frequently Asked Questions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "accordion"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header",
+        id: "headingOne"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "mb-0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-link",
+        "data-toggle": "collapse",
+        "data-target": "#collapseOne",
+        "aria-expanded": "true",
+        "aria-controls": "collapseOne"
+      }, "How does it work?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "collapseOne",
+        className: "collapse show",
+        "aria-labelledby": "headingOne",
+        "data-parent": "#accordion"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, "First, create an account and answer a few, short questions to help us personalize your experience. Then, you can access your free dashboard. We instantly create a comprehensive checklist to walk you through the entire experience after a loss. We\u2019ll keep you on track, share useful resources and assist in decision making."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header",
+        id: "headingTwo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "mb-0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-link collapsed",
+        "data-toggle": "collapse",
+        "data-target": "#collapseTwo",
+        "aria-expanded": "false",
+        "aria-controls": "collapseTwo"
+      }, "Why do I have to fill out the questions when I sign up?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "collapseTwo",
+        className: "collapse",
+        "aria-labelledby": "headingTwo",
+        "data-parent": "#accordion"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, "The intake questions allow us to provide a personalized checklist for you. Depending on timing and preferences your experience can vary widely. You can always change your preferences by going to \u201Cmy preferences\u201D on the left side of your checklist."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header",
+        id: "headingThree"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "mb-0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-link collapsed",
+        "data-toggle": "collapse",
+        "data-target": "#collapseThree",
+        "aria-expanded": "false",
+        "aria-controls": "collapseThree"
+      }, "How does the concierge work?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "collapseThree",
+        className: "collapse",
+        "aria-labelledby": "headingThree",
+        "data-parent": "#accordion"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, "Our concierge is a live human that can answer questions and direct you to resources. Find the concierge here. The concierge is available live 9-5pm EST Monday-Friday. If outside these hours, our concierge will follow up with you within 24 hours (usually sooner!)"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header",
+        id: "headingFour"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "mb-0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-link collapsed",
+        "data-toggle": "collapse",
+        "data-target": "#collapseFour",
+        "aria-expanded": "false",
+        "aria-controls": "collapseFour"
+      }, "I forgot my password and/or username. How do I find it?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "collapseFour",
+        className: "collapse",
+        "aria-labelledby": "headingFour",
+        "data-parent": "#accordion"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, "No problem! Click the \u201Csign in\u201D button on the homepage and then click \u201C forgot password\u201D on the bottom of the pop up screen. Still having trouble logging in? Message our concierge. Available live 9-5pm EST M-F. If outside these hours, our concierge will follow up with you within 24 hours."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header",
+        id: "headingFive"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "mb-0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-link collapsed",
+        "data-toggle": "collapse",
+        "data-target": "#collapseFive",
+        "aria-expanded": "false",
+        "aria-controls": "collapseFive"
+      }, "What if I don\u2019t want to make an account. How else can I use Good Grief?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "collapseFive",
+        className: "collapse",
+        "aria-labelledby": "headingFive",
+        "data-parent": "#accordion"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, "Our content is accessible with or without an account. Check out articles that cover the entire end of life experience here.")))));
+    }
+  }]);
+
+  return FAQPage;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (FAQPage);
 
 /***/ }),
 

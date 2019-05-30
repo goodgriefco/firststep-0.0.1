@@ -18,9 +18,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/faq">FAQ</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">

@@ -63915,14 +63915,24 @@ function (_Component) {
         "data-target": "#collapseOne",
         "aria-expanded": "true",
         "aria-controls": "collapseOne"
-      }, "How does it work?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "The Checklist"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "collapseOne",
         className: "collapse show",
         "aria-labelledby": "headingOne",
         "data-parent": "#accordion"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, "First, create an account and answer a few, short questions to help us personalize your experience. Then, you can access your free dashboard. We instantly create a comprehensive checklist to walk you through the entire experience after a loss. We\u2019ll keep you on track, share useful resources and assist in decision making."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "font-italic"
+      }, "How does it work?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "First, create an account and answer a few, short questions to help us personalize your experience. Then, you can access your free dashboard. We instantly create a comprehensive checklist to walk you through the entire experience after a loss. We\u2019ll keep you on track, share useful resources and assist in decision making.", " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "font-italic"
+      }, "Why do I have to fill out the questions when I sign up?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "The intake questions allow us to provide a personalized checklist for you. Depending on timing and preferences your experience can vary widely. You can always change your preferences by going to \u201Cmy preferences\u201D on the left side of your checklist.", " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "font-italic"
+      }, "How does the concierge work?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Our concierge is a live human that can answer questions and direct you to resources. Find the concierge here. The concierge is available live 9-5pm EST Monday-Friday. If outside these hours, our concierge will follow up with you within 24 hours (usually sooner!)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "font-italic"
+      }, "I forgot my password and/or username. How do I find it?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "No problem! Click the \u201Csign in\u201D button on the homepage and then click \u201C forgot password\u201D on the bottom of the pop up screen. Still having trouble logging in? Message our concierge. Available live 9-5pm EST M-F. If outside these hours, our concierge will follow up with you within 24 hours."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "font-italic"
+      }, "What if I don\u2019t want to make an account. How else can I use Good Grief?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Our content is accessible with or without an account. Check out articles that cover the entire end of life experience [here]")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header",
@@ -63935,14 +63945,24 @@ function (_Component) {
         "data-target": "#collapseTwo",
         "aria-expanded": "false",
         "aria-controls": "collapseTwo"
-      }, "Why do I have to fill out the questions when I sign up?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Contacting Us"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "collapseTwo",
         className: "collapse",
         "aria-labelledby": "headingTwo",
         "data-parent": "#accordion"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-body"
-      }, "The intake questions allow us to provide a personalized checklist for you. Depending on timing and preferences your experience can vary widely. You can always change your preferences by going to \u201Cmy preferences\u201D on the left side of your checklist."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "font-italic"
+      }, "I\u2019m trying to get in touch with you. What\u2019s the best way to reach out?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We love meeting new people!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Looking for job opportunities? Email:", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "mail:to"
+      }, "alyssa@goodgrief.co")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Interested in investing in or partnering with Good Grief? Email:", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "mail:to"
+      }, "liz@goodgrief.co")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Media inquiry? Email:", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "mail:to"
+      }, "liz@goodgrief.co")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Questions, ideas, thoughts? Email:", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "mail:to"
+      }, "hello@goodgrief.co")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "How can I stay in the know about Good Grief? Sign up for our"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "[newsletter]"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "[Follow us on Facebook and]"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "[Instagram]"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header",
@@ -63955,54 +63975,23 @@ function (_Component) {
         "data-target": "#collapseThree",
         "aria-expanded": "false",
         "aria-controls": "collapseThree"
-      }, "How does the concierge work?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "About us"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "collapseThree",
         className: "collapse",
         "aria-labelledby": "headingThree",
         "data-parent": "#accordion"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, "Our concierge is a live human that can answer questions and direct you to resources. Find the concierge here. The concierge is available live 9-5pm EST Monday-Friday. If outside these hours, our concierge will follow up with you within 24 hours (usually sooner!)"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header",
-        id: "headingFour"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-        className: "mb-0"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "btn btn-link collapsed",
-        "data-toggle": "collapse",
-        "data-target": "#collapseFour",
-        "aria-expanded": "false",
-        "aria-controls": "collapseFour"
-      }, "I forgot my password and/or username. How do I find it?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "collapseFour",
-        className: "collapse",
-        "aria-labelledby": "headingFour",
-        "data-parent": "#accordion"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-body"
-      }, "No problem! Click the \u201Csign in\u201D button on the homepage and then click \u201C forgot password\u201D on the bottom of the pop up screen. Still having trouble logging in? Message our concierge. Available live 9-5pm EST M-F. If outside these hours, our concierge will follow up with you within 24 hours."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header",
-        id: "headingFive"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-        className: "mb-0"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "btn btn-link collapsed",
-        "data-toggle": "collapse",
-        "data-target": "#collapseFive",
-        "aria-expanded": "false",
-        "aria-controls": "collapseFive"
-      }, "What if I don\u2019t want to make an account. How else can I use Good Grief?"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "collapseFive",
-        className: "collapse",
-        "aria-labelledby": "headingFive",
-        "data-parent": "#accordion"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-body"
-      }, "Our content is accessible with or without an account. Check out articles that cover the entire end of life experience here.")))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "font-italic"
+      }, "Why did you start this company?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We\u2019ve been in your shoes before. We saw how the current offerings are often overpriced, confusing and primarily offline. We built Good Grief based on your needs. Our company isn\u2019t designed for the industry; it\u2019s designed for you."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "font-italic"
+      }, "How is this free? How do you make money?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We believe in offering exceptional free services for our users. Funeral planning is an expensive time as it is. As we grow, we will offer paid features but the checklist will always be free. We do not take any funds from service providers meaning our guidance is not influenced by sponsors or advertisers."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "font-italic"
+      }, "Why are you a benefit corporation?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We are a mission driven for profit company. A Benefit Corporation is a legal designation that allows us to maintain our mission to serve grieving families through capital raises, changes in leadership or anything else. Learn more about Benefit Corporations", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://benefitcorp.net/",
+        target: "_blank"
+      }, "here"), "."))))));
     }
   }]);
 

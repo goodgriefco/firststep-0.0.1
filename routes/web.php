@@ -46,3 +46,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/faq', 'FAQController@index')->name('faq');
+Route::get('/intake', 'IntakeController@index')->name('intake');

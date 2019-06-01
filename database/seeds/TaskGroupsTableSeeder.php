@@ -26,6 +26,14 @@ class TaskGroupsTableSeeder extends Seeder
                 'title' => 'Within 48 Hours'
             ],
             [
+                'group_key' => 'within_week',
+                'title' => 'Within a week'
+            ],
+            [
+                'group_key' => 'within_month',
+                'title' => 'Within a month'
+            ],
+            [
                 'group_key' => 'other',
                 'title' => 'Other things to consider'
             ],

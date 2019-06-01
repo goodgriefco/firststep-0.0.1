@@ -56,4 +56,39 @@ class User extends Authenticatable
     {
         return $this->hasMany(Task::class);
     }
+
+    /**
+     * Create tasks for week 1.
+     */
+    public function createWeekOneTasks()
+    {
+        return $this->tasks()->createMany([
+            [
+                'title' => 'Create your contact list',
+                // @TODO - remove hardcoded group_id
+                'group_id' => 1,
+                'is_complete' => false
+            ],
+            [
+                'title' => 'Obtain Death Certificate',
+                'group_id' => 1,
+                'is_complete' => false
+            ],
+            [
+                'title' => 'Select cremation provider',
+                'group_id' => 1,
+                'is_complete' => false
+            ],
+            [
+                'title' => 'Plan Memorial Details',
+                'group_id' => 1,
+                'is_complete' => false
+            ],
+            [
+                'title' => 'Write Obituary',
+                'group_id' => 1,
+                'is_complete' => false
+            ]
+        ]);
+    }
 }

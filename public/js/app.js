@@ -63508,13 +63508,13 @@ function (_Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "btn btn-secondary",
         "data-toggle": "collapse",
-        href: "#collapseExample",
+        href: "#group-".concat(groupId, "-addform"),
         role: "button",
         "aria-expanded": "false",
-        "aria-controls": "collapseExample"
+        "aria-controls": "collapseSomething"
       }, "Add Task"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container my-4 collapse",
-        id: "collapseExample"
+        id: "group-".concat(groupId, "-addform")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Forms_AddTaskForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
         addTaskHandler: addTask,
         groupId: groupId

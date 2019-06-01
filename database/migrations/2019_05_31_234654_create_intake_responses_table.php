@@ -39,6 +39,11 @@ class CreateIntakeResponsesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('responses');
+        // Schema::table('responses', function (Blueprint $table) {
+        //     $table->dropForeign(['user_id']);
+        //     $table->dropColumn(['user_id']);
+        // });
+
+        Schema::dropIfExists('intake_responses');
     }
 }

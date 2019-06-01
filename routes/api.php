@@ -6,6 +6,7 @@ use App\Models\Task;
 use App\Models\TaskGroup;
 use Illuminate\Http\Request;
 use App\Models\IntakeResponse;
+use App\Services\ProvidedTasks;
 // use Illuminate\Support\Facades\Log;
 // use App\Services\Typeform;
 
@@ -89,7 +90,8 @@ Route::post('/webhook', function (Request $request) {
     // @TODO - Create tasks based on responses.
     // $taskGroups = TaskGroup::all();
     $user = User::find($userId);
-    $user->createWeekOneTasks();
+    $providedTasks = new ProvidedTasks();
+    $providedTasks->setProvidedTasks($user);
     // foreach ($taskGroups as $group) {
     //     Log::info($group->title);
     //     $group->createWeekOneTasks($user);

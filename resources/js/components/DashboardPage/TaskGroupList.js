@@ -20,14 +20,14 @@ class TaskGroupList extends Component {
                 <a
                     className="btn btn-secondary"
                     data-toggle="collapse"
-                    href="#collapseExample"
+                    href={`#group-${groupId}-addform`}
                     role="button"
                     aria-expanded="false"
-                    aria-controls="collapseExample"
+                    aria-controls="collapseSomething"
                 >
                     Add Task
                 </a>
-                <div className="container my-4 collapse" id="collapseExample">
+                <div className="container my-4 collapse" id={`group-${groupId}-addform`}>
                     <AddTaskForm
                         addTaskHandler={addTask}
                         groupId={groupId}

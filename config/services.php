@@ -44,4 +44,10 @@ return [
         ],
     ],
 
+    'typeform' => [
+        'url'=> 'https://api.typeform.com',
+        'client_secert' => env('TYPEFORM_APP_CLIENT_SECRET'),
+        'client_id' => env('TYPEFORM_APP_CLIENT_ID'),
+    ],
+
 ];

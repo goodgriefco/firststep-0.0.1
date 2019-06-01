@@ -63739,12 +63739,13 @@ function (_Component) {
                 tasks = _context.sent;
                 // Parse the results for ease of use.
                 tasks = tasks.data;
+                console.log(tasks);
                 this.setState({
                   tasks: tasks,
                   userName: userName
                 });
 
-              case 8:
+              case 9:
               case "end":
                 return _context.stop();
             }
@@ -63821,27 +63822,22 @@ function (_Component) {
         };
       };
 
-      var groupByGroupId = groupBy('group_id');
+      var groupByGroupId = groupBy("group_id");
       var tasksByGroup = groupByGroupId(tasks);
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container text-center my-4"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Welcome, ", this.state.userName)), Object.entries(tasksByGroup).map(function (group, idx) {
-        // console.log(group);
-        if (group[0] === "2") {
-          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-            className: "container",
-            key: idx
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TaskGroup__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            canCollapse: true,
-            headerText: "group header",
-            group: group,
-            groupId: "3" // @TODO - can we just use key?
-            ,
-            addTask: _this2.handleAddTask
-          }));
-        } else {
-          return '';
-        }
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "container",
+          key: idx
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TaskGroup__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          canCollapse: true,
+          headerText: "group header",
+          group: group,
+          groupId: "3" // @TODO - can we just use key?
+          ,
+          addTask: _this2.handleAddTask
+        }));
       }));
     }
   }]);

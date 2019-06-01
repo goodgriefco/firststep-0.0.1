@@ -21,6 +21,7 @@ class DashboardPage extends Component {
 
         // Parse the results for ease of use.
         tasks = tasks.data;
+        console.log(tasks);
 
         this.setState({ tasks, userName });
     }
@@ -56,7 +57,7 @@ class DashboardPage extends Component {
                 return objectsByKeyValue;
             }, {});
 
-        const groupByGroupId = groupBy('group_id');
+        const groupByGroupId = groupBy("group_id");
         const tasksByGroup = groupByGroupId(tasks);
 
         return (
@@ -65,6 +66,19 @@ class DashboardPage extends Component {
                     <h3>Welcome, {this.state.userName}</h3>
                 </div>
                 {Object.entries(tasksByGroup).map((group, idx) => {
+                    return (
+                        <div className="container" key={idx}>
+                            <TaskGroup
+                                canCollapse={true}
+                                headerText="group header"
+                                group={group}
+                                groupId="3" // @TODO - can we just use key?
+                                addTask={this.handleAddTask}
+                            />
+                        </div>
+                    );
+                })}
+                {/* {Object.entries(tasksByGroup).map((group, idx) => {
                     // console.log(group);
                     if (group[0] === "2") {
                         return (
@@ -81,7 +95,7 @@ class DashboardPage extends Component {
                     } else {
                         return '';
                     }
-                })}
+                })} */}
             </div>
         );
     }

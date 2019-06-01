@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class TaskGroup extends Model
 {
     /**
-     * Get the comments for the blog post.
+     * Get all the tasks associated with this group
      */
     public function tasks()
     {

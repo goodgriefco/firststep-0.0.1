@@ -4,11 +4,19 @@ use Illuminate\Support\Str;
 
 // @TODO - Fix this.
 if (env('APP_ENV') === 'staging') {
-    $url = parse_url(env("CLEARDB_DATABASE_URL"));
-    $host = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $database = substr($url["path"], 1);
+    $url = getenv('JAWSDB_URL');
+    $dbparts = parse_url($url);
+
+    $host = $dbparts['host'];
+    $username = $dbparts['user'];
+    $password = $dbparts['pass'];
+    $database = ltrim($dbparts['path'],'/');
+
+    // $url = parse_url(env("CLEARDB_DATABASE_URL"));
+    // $host = $url["host"];
+    // $username = $url["user"];
+    // $password = $url["pass"];
+    // $database = substr($url["path"], 1);
 } else {
     $host = env('DB_HOST','localhost');
     $username = env('DB_USERNAME', 'root');

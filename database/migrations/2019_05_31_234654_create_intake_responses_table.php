@@ -19,8 +19,8 @@ class CreateIntakeResponsesTable extends Migration
             $table->string('event_id');
             $table->string('form_id');
             $table->dateTime('submitted_at');
-            $table->json('fields');
-            $table->json('answers');
+            $table->text('fields');
+            $table->text('answers');
             $table->timestamps();
         });
 

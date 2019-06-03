@@ -4,7 +4,7 @@ use Illuminate\Support\Str;
 
 // @TODO - Fix this.
 if (env('APP_ENV') === 'staging') {
-    $url = getenv('JAWSDB_URL');
+    $url = getenv('JAWSDB_MARIA_URL');
     $dbparts = parse_url($url);
 
     $host = $dbparts['host'];

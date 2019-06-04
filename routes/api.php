@@ -77,35 +77,20 @@ Route::post('/webhook', function (Request $request) {
     $userId = (int) $request['form_response']['hidden']['user'];
     // @TODO - What assumptions are we making about user id here? is it ever possible that
     // user_id could point to another user? Could it be null?
-    $response = IntakeResponse::create([
-        'user_id' => $userId,
-        'event_id' => $request['event_id'],
-        'form_id' => $request['form_response']['form_id'],
-        'submitted_at' => new Carbon($request['form_response']['submitted_at']),
-        'fields' => json_encode($request['form_response']['definition']['fields']),
-        'answers' => json_encode($request['form_response']['answers'])
-    ]);
-    // Log::info(json_decode($response->answers));
+    if ($userId) {
+        IntakeResponse::create([
+            'user_id' => $userId,
+            'event_id' => $request['event_id'],
+            'form_id' => $request['form_response']['form_id'],
+            'submitted_at' => new Carbon($request['form_response']['submitted_at']),
+            'fields' => json_encode($request['form_response']['definition']['fields']),
+            'answers' => json_encode($request['form_response']['answers'])
+        ]);
 
-    // @TODO - Create tasks based on responses.
-    // $taskGroups = TaskGroup::all();
-    $user = User::find($userId);
-    $providedTasks = new ProvidedTasks();
-    $providedTasks->setProvidedTasks($user);
-    // foreach ($taskGroups as $group) {
-    //     Log::info($group->title);
-    //     $group->createWeekOneTasks($user);
-    // }
-
-
-    // $answers = json_decode($response->answers);
-
-    // Log::info($answers);
-    // foreach($answers as $answer) {
-    //     $field = $answer->field->ref;
-    //     Log::info($field);
-
-    // }
+        $user = User::find($userId);
+        $providedTasks = new ProvidedTasks();
+        $providedTasks->setProvidedTasks($user);
+    }
 
     return response()->json([
         'message' => 'success',
